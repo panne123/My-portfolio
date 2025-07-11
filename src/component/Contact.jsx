@@ -23,7 +23,6 @@ const Contact = () => {
       alert('Thanks for connecting with me!');
       window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  
       e.target.reset();
 
     } catch (error) {
