@@ -84,3 +84,11 @@
 .project-content a:hover {
   color: #2575fc;
 }
+@media (max-width: 768px) {
+
+.projects-section{
+
+    padding: 0 !important;
+
+ }
+    }
