@@ -33,7 +33,6 @@ const Contact = () => {
       setLoading(false);
     }
   };
-
   return (
     <section id="contact" className="contact-section">
       <h2>Contact Me</h2>
