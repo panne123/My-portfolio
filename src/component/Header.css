@@ -1,0 +1,146 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 9999;
+  animation: slideIn 1s ease-out forwards;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.toggle .bar {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav.open {
+    max-height: 300px;
+    padding: 1rem 0;
+  }
+
+  .nav a {
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .toggle {
+    display: flex;
+  }
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header {
+  animation: slideIn 1s ease-out forwards;
+}
+.nav-link {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: navFade 0.5s ease forwards;
+}
+
+.nav-link:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.nav-link:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.nav-link:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.nav-link:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+@keyframes navFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Nav links - always apply */
+.nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav a.active {
+  color: #6a11cb;
+}
+
+@media (min-width: 769px) {
+  .nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #6a11cb;
+    transition: width 0.3s ease;
+  }
+
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  .nav a.active::after {
+    width: 100%;
+  }
+}

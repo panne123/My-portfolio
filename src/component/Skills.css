@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* SECTION BACKGROUND */
+.skills-section {
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+ padding: 5rem 1.5rem;
+  text-align: center;
+  position: relative;
+
+  
+  /* overflow: hidden; */
+}
+
+/* 🔧 Fix: Make arrows visible & clickable */
+.slick-prev,
+.slick-next {
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 17px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+/* Dark overlay for skills-section (same as projects-section) */
+.skills-section::before {
+content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 0;}
+
+
+.slick-slide[aria-hidden="true"] * {
+  pointer-events: none;
+}
+
+.slick-slide[aria-hidden="true"] {
+  outline: none;
+}
+
+/* 🔧 Responsive arrow placement */
+
+.slick-list {
+    overflow: hidden !important;
+}
+
+.skills-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #fff;
+  font-weight: 600;
+  line-height: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.skills-slider-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.skill-card {
+background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  height: auto;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transform: translateY(30px) scale(0.85);
+  opacity: 0.6;
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.slick-center .skill-card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  z-index: 2;
+}
+
+.skill-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  filter: brightness(1.2);
+}
+.slick-next {
+    right: -29px;
+}
+.slick-prev {
+    left: -29px;
+}
+.skill-card p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #070707;
+  margin: 0;
+}
+
+/* DIM SIDE SLIDES */
+.slick-slide {
+  opacity: 0.5;
+  transition: opacity 0.5s;
+}
+
+.slick-center {
+  opacity: 1;
+}
+
+/* DOTS COLOR */
+.slick-dots li button:before {
+  color: #000000;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+  .skill-card {
+    height: auto;
+    
+    padding: 1.5rem;
+    transform: translateY(10px) scale(0.9);
+  }
+
+  .slick-center .skill-card {
+    transform: translateY(0) scale(1);
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-card p {
+    font-size: 1.1rem;
+  }
+}
+/* Animate the center slide skill card */
+.slick-center .skill-card {
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
